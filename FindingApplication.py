@@ -73,13 +73,24 @@ response = requests.post(req)
 if response.status_code == 200:
     print('Succesfull conect')
     r = response.json()
-    df = pd.DataFrame(r)
+    df = pd.DataFrame.from_dict(data=r)
     pd.set_option('display.max_rows', None)
     pd.set_option('display.max_column', None)
     pd.set_option('display.max_colwidth', None)
 
     print ('\n\n\n')
-    df.to_excel('./answer1.xlsx')
+    df.pop('global_id')
+    df.pop('Number') 
+    df1 = df.to_dict()
+    for key, values in df1.items():
+        df2 = values
+    #df1.pop('Cells', None)
+    df3 = []
+    for key,values in df2.items():
+        df3.append(values)
+    #print(df3)
+    answ = pd.DataFrame(df3)
+    answ.to_excel('./answer2.xlsx')
 
 else:
     print(response)
