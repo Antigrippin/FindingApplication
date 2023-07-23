@@ -4,6 +4,8 @@ import pandas as pd
 import openpyxl
 
 #Location of the responce: your program folder
+#responce for example 1 : 'answer1.xlsx'
+#responce for example 2: 'answer2.xlsx'
 
 def delete_api(req):
     answ = req[:-42]

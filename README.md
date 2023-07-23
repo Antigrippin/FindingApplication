@@ -12,7 +12,9 @@ Example 1
 		https://apidata.mos.ru/v1/datasets//?api_key=a47e7dc029852f8972d61616d5cf5d36
 		¬ведите ID дл€ перехода:
 	input: 63322
-	output: answer.xlsx (create Excel-file with information)
+	output: answer1.xlsx (create Excel-file with information)
+
+
 Example 2
 	input: 0 (all database)
 	output: Successfull connect
@@ -4098,6 +4100,6 @@ SefUrl : 7710881420-mesta-provedeniya-festivalya-vremena-i-epohi
 
 ¬ведите ID дл€ перехода:
 	input: 63401
-	output: answer1.xlsx 
+	output: answer2.xlsx 
 	
 	
