@@ -8,7 +8,8 @@ def delete_api(req):
 good_key = ["Id", "SefUrl", "CategoryCaption", "Caption"]
 bad_key = ["Number", "global_id"]
 orig_link = "https://apidata.mos.ru/v1/datasets/"
-api_key = "/?api_key=a47e7dc029852f8972d61616d5cf5d36"
+print(requests.get("https://data.mos.ru/").status_code)
+api_key = "/?api_key=a47e7dc029852f8972d61616d5cf5d36" #my API-key
 print(len(api_key))
 req = orig_link+api_key
 response = requests.post(req) #requests
@@ -45,7 +46,7 @@ if response.status_code == 200:
  #       print()
     print(response.url) # link to website
 
-print('Таблица: ', end = '\n\n\n\n')
+print('Table: ', end = '\n\n\n\n')
 req = delete_api(req)
 req += "/rows" + api_key
 print('\nreq = ', req, end = '\n\n')
@@ -57,7 +58,9 @@ if response.status_code == 200:
         break;
     for one_req in r:
         for key,value in one_req.items():
-            if (key in bad_key) == False:
+            if (key in bad_key):
+                print()
+            else:
                 print(value)
 else:
     print("Error")
